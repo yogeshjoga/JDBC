@@ -1,0 +1,10 @@
+package advance_java;
+
+public class Prac {
+	String url = "jdbc:mysql://localhost:3306/"+dbName;
+	String userName = "root";
+	String 
+     public void prepStmt() {
+		
+	}
+}

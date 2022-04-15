@@ -1,0 +1,15 @@
+package advance_java;
+
+public class prepStmt {
+	
+	String userName = "root";
+	String pwd = "root";
+	String drvr ="com.mysql.cj.jdbc.Driver";
+	String url = "jdbc:mysql://localhost:3306/yogi";
+	
+	String sqlCreate = "create table"+
+	public static void main(String[] args) {
+		
+	}
+
+}

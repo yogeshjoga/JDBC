@@ -1,0 +1,87 @@
+package advance_java;
+
+import java.sql.*;
+
+public class prepStmt {
+	
+	String userName = "root";
+	String pwd = "root";
+	String drvr ="com.mysql.cj.jdbc.Driver";
+	String url = "jdbc:mysql://localhost:3306/yogi";
+	
+	String sqlCreate = "create table billaDarling (userId integer,userName varchar, phoneNum integer)";//+tableName;
+	String dbCreate = "create database jdbcTut1";
+	String sqlRetrive;
+	String sqlUpdate;
+	String sqlDelete;
+	
+	
+	
+	
+	/**
+	 * this is the create Database creation by using this method
+	 * so we need to excute this method
+	 */
+	public void cretDB() throws Exception {
+			Class.forName(this.drvr);
+			Connection con = DriverManager.getConnection(this.url,this.userName,this.pwd);
+			Statement stmt = con.createStatement();
+			int i = stmt.executeUpdate(this.dbCreate);
+			while (i>0) {
+				System.out.println("Database created succsfully......");
+				break;
+			}
+			con.close();
+	}
+	
+	/**
+	 * this is the create table inside the database 
+	 * you type your database name and create the new fresh table
+	 * 
+	 * so need to use statment
+	 */
+	public void cretTable()throws Exception {
+		Class.forName(this.drvr);
+		Connection conn = DriverManager.getConnection(this.url,this.userName,this.pwd);
+		Statement stmt = conn.createStatement();
+		
+		
+	}
+	
+	
+	
+	/*
+	 * this is used to retrive the data from your reqd table
+	 * can choose ur database name as well as ur table also
+	 * 
+	 */
+	public void retriveTab() {
+		
+	}
+	
+	
+	/*
+	 * this is used to update table
+	 * as same features in retrive 
+	 */
+	public void updtTable() {
+		
+	}
+	
+	
+	/**
+	 * this is the delete table and delete the table cols,
+	 */
+	public void delTable() {
+		
+	}
+	
+	
+	
+	public static void main(String[] args)throws Exception {
+		prepStmt obj = new prepStmt();
+		obj.cretDB();
+		
+	}
+
+}

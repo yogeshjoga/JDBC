@@ -1,0 +1,12 @@
+package advance_java;
+
+public class Student {
+
+	public static void main(String [] args) {
+		
+		String jdbcDriver = "com.mysql.cj.jdbc.Driver";
+		String userName = "root";
+		String pwd = "root";
+		String 
+	}
+}

@@ -1,0 +1,51 @@
+package advance_java;
+
+import java.sql.*;
+
+public class prepStmt {
+	
+	String userName = "root";
+	String pwd = "root";
+	String drvr ="com.mysql.cj.jdbc.Driver";
+	String url = "jdbc:mysql://localhost:3306/yogi";
+	
+	String sqlCreate = "create table billaDarling (userId integer,userName varchar, phoneNum integer)";//+tableName;
+	String dbCreate = "create database jdbcTut";
+	String sqlRetrive;
+	String sqlUpdate;
+	String sqlDelete;
+	
+	
+	
+	
+	
+	public void cretDB() throws Exception {
+			Class.forName(this.drvr);
+			Connection con = DriverManager.getConnection(this.url,this.userName,this.pwd);
+			Statement stmt = con.createStatement();
+			int i = stmt.executeUpdate(this.dbCreate);
+			while (i>0) {
+				System.out.println("Database created succsfully......");
+				break;
+			}
+			con.close();
+	}
+	public void cretTable() {
+		
+	}
+	public void retriveTab() {
+		
+	}
+	public void updtTable() {
+		
+	}
+	public void delTable() {
+		
+	}
+	public static void main(String[] args)throws Exception {
+		prepStmt obj = new prepStmt();
+		obj.cretDB();
+		
+	}
+
+}

@@ -1,0 +1,129 @@
+package advance_java;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class prepStmt {
+	
+	String userName = "root";
+	String pwd = "root";
+	String drvr ="com.mysql.cj.jdbc.Driver";
+	String url = "jdbc:mysql://localhost:3306/yogi";
+	
+	
+	String tName;
+	String sqlCreate = "create table "+tName+"(userId integer,userName varchar(50),phoneNum integer)";//+tableName;
+	String dbCreate = "create database jdbcTut1";
+	String sqlRetrive;
+	String sqlUpdate;
+	String sqlDelete;
+	
+	
+	
+	
+	/**
+	 * this is the create Database creation by using this method
+	 * so we need to excute this method
+	 */
+	public void cretDB() throws Exception {
+			Class.forName(this.drvr);
+			Connection con = DriverManager.getConnection(this.url,this.userName,this.pwd);
+			Statement stmt = con.createStatement();
+			int i = stmt.executeUpdate(this.dbCreate);
+			while (i>0) {
+				System.out.println("Database created succsfully......");
+				break;
+			}
+			con.close();
+	}
+	
+	/**
+	 * this is the create table inside the database 
+	 * you type your database name and create the new fresh table
+	 * 
+	 * so need to use statment
+	 */
+	public void cretTable(String tName)throws Exception {
+		this.tName = tName;
+		Class.forName(this.drvr);
+		Connection conn = DriverManager.getConnection(this.url,this.userName,this.pwd);
+		Statement stmt = conn.createStatement();
+		int i = stmt.executeUpdate(this.sqlCreate);
+		while(i>0) {
+			System.out.println("Table is created succsfully........");
+		}
+		conn.close();
+		
+		
+	}
+	
+	
+	
+	/*
+	 * this is used to retrive the data from your reqd table
+	 * can choose ur database name as well as ur table also
+	 * 
+	 */
+	public void retriveTab() throws Exception{
+		Class.forName(this.drvr);
+		Connection conn = DriverManager.getConnection(this.url,this.userName,this.pwd);
+		Statement stmt = conn.createStatement();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter query to select all table name is studentsjava from your table...");
+		String qury = sc.nextLine();
+		ResultSet rs = stmt.executeQuery(qury);
+		while(rs.next()) {
+			System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+ rs.getInt(3));
+		}
+		conn.close();
+		sc.close();	
+	}
+	
+	
+	/*
+	 * this is used to update table
+	 * as same features in retrive 
+	 */
+	public void updtTable()throws Exception {
+		
+	}
+	
+	
+	/**
+	 * this is the delete table and delete the table cols,
+	 */
+	public void delTable() throws Exception{
+		
+	}
+	
+	
+	
+	public static void main(String[] args)throws Exception {
+		prepStmt obj = new prepStmt();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("====Select the req function======");
+		System.out.println(" 1) Create DataBase \n 2) Create Table \n 3) Retrive Table \n 4) Update Table \n 5) Delecte Table");
+		int opt = sc.nextInt();
+		switch (opt) {
+		case 1: obj.cretDB();
+		break;
+		case 2: {
+			System.out.println("Enter new table name....");
+			String tname = sc.next();
+			obj.cretTable(tname);
+			}
+		break;
+		case 3: obj.retriveTab();
+		break;
+		case 4: obj.updtTable();
+		break;
+		case 5: obj.delTable();
+		break;
+			
+			
+		}
+		
+		
+	}
+
+}

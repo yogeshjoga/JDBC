@@ -1,0 +1,18 @@
+package advance_java;
+
+
+public class CreateTable {
+		public static void main(String[] args) {
+			//String  url = "com.mysql.cj.jdbc.Driver", usrName = "root", pwd
+			try {
+				Class.forName(Bus.url);
+				
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+			finally {
+				
+			}
+		}
+}

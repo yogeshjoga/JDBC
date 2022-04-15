@@ -1,0 +1,25 @@
+package advance_java;
+
+import java.rmi.server.RemoteStub;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class CreateTable {
+		public static void main(String[] args) {
+			//String  url = "com.mysql.cj.jdbc.Driver", usrName = "root", pwd
+			Bus obj = new Bus();
+			try {
+				Class.forName(obj.url);
+				Connection con = DriverManager.getConnection(obj.conn);
+				ResultSet rst = con.createUpdate(obj.creQu);
+				
+				
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+			finally {
+				
+			}
+		}
+}

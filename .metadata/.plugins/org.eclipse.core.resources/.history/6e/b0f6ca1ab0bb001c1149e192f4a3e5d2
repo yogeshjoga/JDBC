@@ -1,0 +1,25 @@
+package advance_java;
+
+import java.sql.SQLException;
+
+public class Bus {
+		public static void main(String[] args) {
+			
+			String url = "com.mysql.jdbc.Driver";
+			String conn = "jdbc:mysql://localhost:3306/yogi";
+			String userName = "root";
+			String pwd = "root";
+			int num = 1_00;
+			int num1 = 0xf;
+			
+			
+			
+			try {
+				Class.forName
+				
+			}
+			catch(SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+}

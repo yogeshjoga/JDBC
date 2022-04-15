@@ -1,0 +1,35 @@
+package advance_java;
+import java.sql.*;
+
+public class Bus {
+		public static void main(String[] args) {
+			
+			String url = "com.mysql.jdbc.Driver";
+			String conn = "jdbc:mysql://localhost:3306/yogi";
+			String userName = "root";
+			String pwd = "root";
+			
+			String creQu = "create table tiger(id integer(20)), name varchar2(50)";
+			String cre1Qu = ""
+			
+			
+			
+			
+			
+			try {
+				Class.forName(url);
+				Connection con = DriverManager.getConnection(conn,userName,pwd);
+				Statement stmt = con.createStatement();
+				ResultSet rst = stmt.executeQuery();
+				while (rst.next()) {
+					System.out.println(rst.getInt(1)+);
+					
+				}
+				
+				
+			}
+			catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+}

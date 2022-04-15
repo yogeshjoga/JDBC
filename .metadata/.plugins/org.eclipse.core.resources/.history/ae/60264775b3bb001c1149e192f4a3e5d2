@@ -1,0 +1,7 @@
+package advance_java;
+
+public class CreateTable {
+		public static void main(String[] args) {
+			String  url = "com.mysql.cj.jdbc.Driver"
+		}
+}

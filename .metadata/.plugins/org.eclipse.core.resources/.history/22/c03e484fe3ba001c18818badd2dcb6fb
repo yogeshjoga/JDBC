@@ -1,0 +1,18 @@
+package advance_java;
+import java.sql.*;
+public class Jdbc {
+	public static void main(String [] args) {
+	try{  
+		Class.forName("com.mysql.cj.jdbc.Driver");  
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","root","root");  
+		//here so no is database name, root is user name and password  
+		Statement stmt=con.createStatement();  
+		int rs=stmt.executeUpdate("create table yogi");  
+		con.close();  
+		}
+	catch(Exception e){
+			System.out.println(e);
+			}  
+	}
+
+}

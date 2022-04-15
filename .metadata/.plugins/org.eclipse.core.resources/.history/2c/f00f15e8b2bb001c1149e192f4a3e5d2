@@ -1,0 +1,42 @@
+package advance_java;
+import java.sql.*;
+
+
+
+ /// crud 
+ // create retrive update delete
+
+
+public class Bus {
+		public static void main(String[] args) {
+			
+			String url = "com.mysql.jdbc.Driver";
+			String conn = "jdbc:mysql://localhost:3306/yogi";
+			String userName = "root";
+			String pwd = "root";
+			
+			String creQu = "create table tiger(id integer(20)), name varchar2(50)";
+			String cre1Qu = "select * from yogi";
+		
+			
+			
+			
+			
+			
+			try {
+				Class.forName(url);
+				Connection con = DriverManager.getConnection(conn,userName,pwd);
+				Statement stmt = con.createStatement();
+				ResultSet rst = stmt.executeQuery(cre1Qu);
+				while (rst.next()) {
+					System.out.println(rst.getInt(1)+""+rst.get);
+					
+				}
+				
+				
+			}
+			catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+}

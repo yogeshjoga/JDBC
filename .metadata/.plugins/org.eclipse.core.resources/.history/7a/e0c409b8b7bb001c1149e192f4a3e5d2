@@ -1,0 +1,27 @@
+package advance_java;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Update {
+	
+	  public static void main(String[] args) {
+		  try {
+			  Class.forName("com.mysql.cj.jdbc.Driver");
+			  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/yogi","root","root");
+			  Statement stmt = con.createStatement();
+			  int i = stmt.executeUpdate("update tiger22 set ")
+			  
+			  
+		  }
+		  catch (Exception e) {
+			// TODO: handle exception
+		}
+		  finally {
+			
+		}
+		
+	}
+
+}
