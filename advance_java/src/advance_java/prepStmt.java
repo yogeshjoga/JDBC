@@ -10,11 +10,9 @@ public class prepStmt {
 	String pwd = "root";
 	String drvr ="com.mysql.cj.jdbc.Driver";
 	String url = "jdbc:mysql://localhost:3306/yogi";
-	
-	
 	/**
 	 * this is the create Database creation by using this method
-	 * so we need to excute this method
+	 * so we need to execute this method
 	 */
 	public void cretDB(String dbName) throws Exception {
 		    String dbCreate = "create database "+dbName;
@@ -108,14 +106,6 @@ public class prepStmt {
 		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * this is the delete table and delete the table cols,
 	 */
@@ -155,7 +145,7 @@ public class prepStmt {
 			obj.cretTable(tname);
 		}
 		break;
-		// returns the table data through the console 😍😍😍😍😍😍
+		//returns the table data through the console 😍😍😍😍😍😍
 		case 3: {
 			System.out.println("Enter your Table name.....");
 			String tName = sc.next();
