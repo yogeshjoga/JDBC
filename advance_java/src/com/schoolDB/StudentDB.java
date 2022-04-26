@@ -11,7 +11,7 @@ public class StudentDB {
 	private String url = "jdbc:mysql://localhost:3306/yogi";
 	private String userName = "root";
 	private String pwd = "root";
-	private String sqlInsert = "insert into studentTable values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private String sqlInsert = "insert into studenttable values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	//private String sqlUpdate = "update table studentTable where id=";
 	
 	static{

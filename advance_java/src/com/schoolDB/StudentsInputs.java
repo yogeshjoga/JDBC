@@ -1,5 +1,7 @@
 package com.schoolDB;
 
+import java.sql.SQLException;
+
 public class StudentsInputs {
 	public static double totalMarks;
 	public double percentage;
@@ -29,11 +31,13 @@ public class StudentsInputs {
 		
 	}
 	
-	public void updatation() {
-		StudentExams studentExams = new StudentExams();
+public void updatation(StudentExams studentExams)throws Exception{
+		
 		studentExams.setTotalMarks(StudentsInputs.totalMarks);
 		studentExams.setPercentage(this.percentage);
-		studentExams.setGrade(null);
+		studentExams.setGrade(studentMarkGrade(studentExams));
+		StudentDB studentDB = new StudentDB();
+		studentDB.dbUpdateData(studentExams);
 		
 	}
 
